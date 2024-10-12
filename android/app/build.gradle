@@ -1,0 +1,44 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.bennebos.driversuser"
+    compileSdk = 34
+    ndkVersion = "28.0.12433566"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+     lintOptions {
+        disable 'Deprecation'
+        disable 'UnsafeOperations'
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        
+        applicationId = "com.bennebos.driversuser"
+        minSdk = 23
+        targetSdk = 33
+        versionCode = 13
+        versionName = '13'
+    }
+
+    buildTypes {
+        release {
+           
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
